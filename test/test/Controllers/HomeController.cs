@@ -20,14 +20,14 @@ namespace TEST.Controllers
         {
 
             StudentModel student = new StudentModel();
-            student.ID = 1;
+            student.ID = 5201314;
             student.FirstName = "Hedrix Bryan";
             student.MiddleName = "Espiritu";
             student.LastName = "Barcelona";
-            student.Address = "Rizal";
+            student.Address = "Burgos, Rodriguez, Rizal";
 
             ViewBag.WelcomeMessage = "MEMBER 1";
-            ViewData["Quote"] = "Yessir";
+            ViewData["Quote"] = "Shet Shet Nakita Ako";
 
             return View(student);
         }
