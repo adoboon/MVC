@@ -1,20 +1,149 @@
 ﻿@model TEST.Models.StudentModel;
 
-<div class="text-center">
-    <h1 class="display-4">@ViewBag.WelcomeMessage</h1>
-    <span>
-        <h3>ID: </h3>
-        <label>@Model.ID</label>
-    </span>
-    <span>
-        <h3>Full Name: </h3>
-        <label>@Model.FullName</label>
-    </span>
-    <span>
-        <h3>Address: </h3>
-        <label>@Model.Address</label>
-    </span>
+@{
+    ViewData["Title"] = "Member Profile";
+}
 
-    <h1>@ViewData["Quote"]</h1>
+<style>
+    body {
+        background-color: #f4f6f9;
+        font-family: Arial, sans-serif;
+    }
+
+    .profile-card {
+        max-width: 420px;
+        margin: 60px auto;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-header {
+        background-color: #294c60;
+        color: white;
+        padding: 25px;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 12px;
+        border-radius: 50%;
+        background-color: #d9e7ed;
+        color: #294c60;
+        font-size: 32px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid white;
+    }
+
+    .profile-header h2 {
+        margin: 8px 0;
+        font-size: 23px;
+    }
+
+    .profile-header p {
+        margin: 5px;
+        color: #bde3e3;
+    }
+
+    .profile-info {
+        padding: 22px;
+    }
+
+    .info-row {
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .info-row:last-child {
+        border-bottom: none;
+    }
+
+    .label {
+        color: #777;
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    .value {
+        color: #333;
+        font-size: 16px;
+    }
+
+    .quote {
+        background-color: #edf3f6;
+        padding: 15px;
+        margin-top: 18px;
+        border-left: 4px solid #294c60;
+        color: #294c60;
+        font-style: italic;
+        font-weight: bold;
+        border-radius: 4px;
+    }
+
+    .profile-footer {
+        text-align: center;
+        padding: 12px;
+        background-color: #fafafa;
+        color: #888;
+        font-size: 12px;
+    }
+</style>
+
+<div class="profile-card">
+
+    <div class="profile-header">
+        <div class="avatar">HB</div>
+
+        <p>@ViewBag.WelcomeMessage</p>
+
+        <h2>@Model.FirstName @Model.MiddleName @Model.LastName</h2>
+
+        <p>Student Profile</p>
+    </div>
+
+    <div class="profile-info">
+
+        <div class="info-row">
+            <div class="label">Student ID</div>
+            <div class="value">@Model.ID</div>
+        </div>
+
+        <div class="info-row">
+            <div class="label">First Name</div>
+            <div class="value">@Model.FirstName</div>
+        </div>
+
+        <div class="info-row">
+            <div class="label">Middle Name</div>
+            <div class="value">@Model.MiddleName</div>
+        </div>
+
+        <div class="info-row">
+            <div class="label">Last Name</div>
+            <div class="value">@Model.LastName</div>
+        </div>
+
+        <div class="info-row">
+            <div class="label">Address</div>
+            <div class="value">@Model.Address</div>
+        </div>
+
+        <div class="quote">
+            "@ViewData["Quote"]"
+        </div>
+
+    </div>
+
+    <div class="profile-footer">
+        MEMBER PROFILE • MVC ASSIGNMENT
+    </div>
 
 </div>
